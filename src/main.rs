@@ -7,3 +7,8 @@ extern crate novusk;
 pub extern "C" fn kernel_main() -> ! {
     loop {  }
 }
+
+#[no_mangle]
+pub extern "C" fn main_test() -> i32 {
+    0
+}
