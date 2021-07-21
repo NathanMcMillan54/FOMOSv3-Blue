@@ -1,14 +1,12 @@
 #![no_std]
 #![no_main]
 
-extern crate novusk;
+pub use novusk;
+use novusk::kernel::printk::printk;
+
 
 #[no_mangle]
-pub extern "C" fn kernel_main() -> ! {
+pub unsafe extern "C" fn kernel_main() -> ! {
+    printk!("Starting FOMOSv3-Blue...");
     loop {  }
-}
-
-#[no_mangle]
-pub extern "C" fn main_test() -> i32 {
-    0
 }

@@ -8,4 +8,4 @@ edition = "2018"
 bootloader = "0.9.12"
 
 [dependencies]
-novusk = { git = "https://github.com/NathanMcMillan54/novusk" }
+novusk = { git = "https://github.com/NathanMcMillan54/novusk/", tag = "v3-beta-a1.1", features = ["bios_boot", "uk_keyboard"] }
