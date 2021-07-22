@@ -2,11 +2,17 @@
 #![no_main]
 
 pub use novusk;
-use novusk::kernel::printk::printk;
 
+#[cfg(target_arch = "x86_64")]
+pub(crate) mod x86_64;
+
+
+pub(crate) mod graphics;
 
 #[no_mangle]
 pub unsafe extern "C" fn kernel_main() -> ! {
-    printk!("Starting FOMOSv3-Blue...");
+    #[cfg(target_arch = "x86_64")]
+    x86_64::x86_64_setup();
+
     loop {  }
 }
