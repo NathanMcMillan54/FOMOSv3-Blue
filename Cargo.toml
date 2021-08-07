@@ -1,6 +1,6 @@
 [package]
 name = "FOMOSv3-Blue"
-version = "0.1.0"
+version = "3.0.0"
 authors = ["NathanMcMillan <nathanmcmillan54@gmail.com>"]
 edition = "2018"
 
@@ -8,4 +8,4 @@ edition = "2018"
 bootloader = "0.9.18"
 
 [dependencies]
-novusk = { git = "https://github.com/NathanMcMillan54/novusk/", tag = "v3-beta-a3.1", features = ["bios_boot", "us_keyboard"] }
+novusk = { git = "https://github.com/NathanMcMillan54/novusk/", tag = "v3-beta-a3.1.1", features = ["bios_boot", "us_keyboard"] }

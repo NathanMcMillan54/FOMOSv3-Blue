@@ -1,11 +1,5 @@
-use novusk::libs::libcolor::vga_colors::Color;
+use super::desktop::DESKTOP_SIZE;
 
-extern "C" {
-    fn _vga_pixel(color: Color, x: usize, y: usize);
-}
-
-pub fn x86_64_setup() {
-    unsafe {
-        _vga_pixel(Color::Cyan, 1, 1);
-    }
+pub unsafe fn x86_64_setup() {
+    DESKTOP_SIZE = (80, 25);
 }
