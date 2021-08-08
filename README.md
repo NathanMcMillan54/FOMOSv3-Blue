@@ -2,6 +2,21 @@
 
 A [Novusk](https://github.com/new-kernel/novusk) based OS
 
+Build, use ``x86_64`` or ``aarch64``:
+```commandline
+make all <arch>
+```
+
+Run x86_64:
+```commandline
+qemu-system-x86_64 FOMOSv3.img
+```
+
+Run Aarch64:
+```commandline
+qemu-system-aarch64 -machine raspi3 -serial null -serial stdio -kernel kernel8.img
+```
+
 ### Project history
 
 [FOMOSv1-Yellow](https://github.com/NathanMcMillan54/FOMOSv1-Yellow) (Free, Open source, Mobile, Operating, System) 
