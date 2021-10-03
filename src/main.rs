@@ -1,30 +1,18 @@
 #![no_std]
 #![no_main]
 
+#[macro_use] extern crate lazy_static;
 #[macro_use] pub extern crate novusk;
+use novusk::drivers::gpu::GpuGraphics;
 
-#[cfg(target_arch = "aarch64")]
-pub(crate) mod aarch64;
-
-#[cfg(target_arch = "x86_64")]
-pub(crate) mod x86_64;
-
-#[cfg(target_arch = "x86_64")]
-pub(crate) mod desktop;
-#[cfg(target_arch = "x86_64")]
-pub(crate) mod fmain;
-
+pub mod display;
+pub mod kernel;
 
 #[no_mangle]
 pub unsafe extern "C" fn kernel_main() -> ! {
-    #[cfg(target_arch = "aarch64")]
-    aarch64::aarch64_setup();
+    let mut gg = GpuGraphics::new();
 
-    #[cfg(target_arch = "x86_64")]
-    x86_64::x86_64_setup();
-
-    #[cfg(target_arch = "x86_64")]
-    fmain::main_loop();
+    gg.graphics_print(200, 260, 15, format_args!("Setting up desktop..."));
 
     panic!("FOMOSv3-Blue v3 ended");
 }
