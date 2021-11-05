@@ -8,10 +8,8 @@ edition = "2018"
 bootloader = "0.9.18"
 
 [dependencies]
-lazy_static = "1.4.0"
-spin = "0.9.2"
+linked_list_allocator = "0.9.1"
 
 [dependencies.novusk]
 git = "https://github.com/NathanMcMillan54/novusk"
-tag = "v3-beta-k3.1"
 features = ["custom_config", "bios_boot", "rpi3"]
