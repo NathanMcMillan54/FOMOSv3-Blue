@@ -1,0 +1,8 @@
+[package]
+name = "libfktask"
+version = "0.1.0"
+edition = "2021"
+description = "FOMOS kernel task manager"
+
+[dependencies]
+lazy_static = "1.4.0"

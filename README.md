@@ -1,10 +1,10 @@
-# FOMOSv3-Blue v3 - Novusk v3-beta a v3.1.1
+# FOMOSv3-Blue v3 - Novusk v3-beta
 
 A [Novusk](https://github.com/new-kernel/novusk) based OS
 
 Build, use ``x86_64`` or ``aarch64``:
 ```commandline
-make all <arch>
+make all ARCH=<arch> FEATURES=<device> # Read Documentation/devices.md
 ```
 
 Run x86_64:
@@ -14,7 +14,7 @@ qemu-system-x86_64 FOMOSv3.img
 
 Run Aarch64:
 ```commandline
-qemu-system-aarch64 -machine raspi3 -serial null -serial stdio -kernel kernel8.img
+qemu-system-aarch64 -machine <device> -serial null -serial stdio -kernel kernel8.img
 ```
 
 ### Project history

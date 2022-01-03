@@ -2,14 +2,25 @@
 name = "FOMOSv3-Blue"
 version = "3.0.0"
 authors = ["NathanMcMillan <nathanmcmillan54@gmail.com>"]
-edition = "2018"
+edition = "2021"
+
+[workspace]
+members = [
+    "libfk/libfktask/",
+]
 
 [target.'cfg(target_arch = "x86_64")'.dependencies]
 bootloader = "0.9.18"
 
 [dependencies]
-linked_list_allocator = "0.9.1"
+libfktask = { path = "libfk/libfktask/" }
+novuskinc = "0.1.0"
 
 [dependencies.novusk]
-git = "https://github.com/NathanMcMillan54/novusk"
-features = ["custom_config", "bios_boot", "rpi3"]
+git = "https://github.com/new-kernel/novusk"
+tag = "v3-beta-k3.2"
+features = ["custom_config", "rpi3"]
+
+[features]
+stdpc = ["novusk/bios_boot", "novusk/bootloader_rs"]
+rpi = ["novusk/rpi3"]
