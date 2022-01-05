@@ -5,6 +5,7 @@
 #[macro_use] extern crate novuskinc;
 #[macro_use] extern crate novusk;
 
+use core::fmt::Write;
 use novusk::libs::{libost::desktop::{Desktop, DesktopIcon}, libwin::Window, libwin::graphics::graphics::*};
 
 pub mod builtins;

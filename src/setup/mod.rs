@@ -1,5 +1,5 @@
 pub mod device;
 
-pub fn setup_fomos() {
-
+pub unsafe fn setup_fomos() {
+    device::device_init();
 }
