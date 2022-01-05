@@ -18,6 +18,7 @@ pub use fk::*;
 #[no_mangle]
 pub unsafe extern "C" fn kernel_main() -> ! {
     setup::setup_fomos();
+    fk_print!("Setup finished\n");
 
     panic!("FOMOSv3-Blue v3 ended");
 }

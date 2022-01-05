@@ -1,6 +1,9 @@
+use core::borrow::Borrow;
 use core::fmt::{Arguments, Write};
 use core::str::from_utf8_unchecked;
 use crate::graphics_write;
+
+pub static mut FKWRITER: FkWriter = FkWriter { x: 1, y: 0 };
 
 pub struct FkWriter {
     pub x: usize,
@@ -17,7 +20,7 @@ impl FkWriter {
 
     pub fn write(&mut self, write: u8) {
         if write == b'\n' {
-            self.y -= 9;
+            self.y += 9;
             self.x = 1;
         } else { self.x += 8; }
 
@@ -36,9 +39,7 @@ impl Write for FkWriter {
 }
 
 pub fn _fk_print(fmt: Arguments) -> Arguments {
-    let mut writer = FkWriter::new();
-
-    writer.write_fmt(fmt);
+    unsafe { FKWRITER.write_fmt(fmt); }
 
     return fmt;
 }

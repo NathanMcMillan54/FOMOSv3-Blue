@@ -1,6 +1,12 @@
 // Already initialized by Novusk
+use crate::fk_print;
 
-fn rpi_init() {   }
+#[no_mangle]
+pub extern "C" fn fn_dev_name() -> &'static str {
+    return "Reg RPi";
+}
+
+fn rpi_init() {  }
 
 fn rpi_end() {    }
 
