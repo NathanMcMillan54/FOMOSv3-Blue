@@ -23,5 +23,4 @@ qemu-system-aarch64 -machine <device> -serial null -serial stdio -kernel kernel8
 <u>was</u> a UI for mobile devices, Linux would start a Js UI that someone would use. Eventually I wanted it to turn 
 into a full OS, and it will one day with Novusk.
 
-This is an OS that can run on whatever you want it to. Laptops, PCs, microcontrollers 
-(with lots of specific attachments).
+This is an OS that can run on whatever you want it to. Laptops, PCs, ands microcontrollers.
