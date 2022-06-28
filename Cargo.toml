@@ -20,7 +20,7 @@ novuskinc = "0.1.0"
 
 [dependencies.novusk]
 git = "https://github.com/new-kernel/novusk"
-tag = "v3-beta-k3.2"
+tag = "v3.0.1"
 features = ["custom_config", "rpi3"]
 
 [features]

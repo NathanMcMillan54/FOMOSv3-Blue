@@ -20,7 +20,7 @@ impl MouseDevice {
     pub fn display(&self) {
         for h in 0..4 {
             for w in 0..4 {
-                graphics_pixel(self.x_pos + w, self.y_pos + h, 15);
+                unsafe { graphics_pixel(self.x_pos + w, self.y_pos + h, 15); }
             }
         }
     }
